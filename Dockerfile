@@ -17,5 +17,5 @@ RUN apt update && apt install -y git python3-venv libgl1-mesa-glx libglib2.0-0
 COPY --from=builder /venv /venv
 WORKDIR /stable-diffusion-webui
 ENV REQ_FILES="requirements.txt"
-ENV HF_HOME=/stable-diffusion-webui/.cache/huggingface
+ENV HF_HOME=/stable-diffusion-webui/models/huggingface
 CMD . /venv/bin/activate && python launch.py
